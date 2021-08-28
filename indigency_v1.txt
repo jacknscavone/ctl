@@ -1,0 +1,27 @@
+Title: Indigency "Flowchart"
+Author: [Jack Scavone]
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Indigency "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in [insert state name].</p>
+Q(1): Does the individual receive public assistance? (public assistance does not include disability payments, pension, unemployment, or social security)
+A:	Yes
+	Q(1.1):GOTO:3
+A:	No
+	Q(1.2):GOTO:2
+Q(2): Is the individual's income less than the Federal Poverty Guideline? ($11,670 for 1 person in family/household, $15,730 for 2, $19,790 for 3, $23,850 for 4, $27,910 for 5, $31,970 for 6)
+A:	Yes
+	Q(2.1):GOTO:3
+A:	No
+	Q(2.2):GOTO:ineligible
+
+Q(3): Is the individual able to provide cash contributions towards payment of counsel without imposing a substantial hardship?
+A:	Yes
+	Q(3.1):GOTO:eligibleone
+A:	No
+	Q(3.2):GOTO:eligibletwo
+Q(ineligible): The individual is ineligible for counsel
+Q(eligibleone): The individual is eligible for counsel is required to make contributions towards the cost of counsel that will not cause them a substantial hardship. (if at any time during or after the case the individual becomes financially capable of paying for more or all of the costs, then they are required to make such payments) 
+Q(eligibletwo): The individual is eligible for counsel and is not required to repay any of the costs for counsel. (if at any point during or after the case the individual becomes financially capable of paying part or all of the costs for counsel, then they are required to make such payments)
+ 
