@@ -1,0 +1,57 @@
+Title: Indigency "Flowchart"
+Author: [Jack Scavone]
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Indigency "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in Missouri.</p>
+<script>
+function fedpov(house,income,percentage){
+	// Determines if your income is less than or equal to
+	// a percentage of the 2021 federal poverty guidelines
+	// for the contiguous United States. See
+	// https://aspe.hhs.gov/poverty-guidelines
+
+		var line = NaN;
+
+		if (house == 1) {
+			line = 11670;
+		} else if (house == 2) {
+			line = 15730;
+		} else if (house == 3) {
+			line = 19790;
+		} else if (house == 4) {
+			line = 23850;
+		} else if (house == 5) {
+			line = 27910;
+		} else if (house == 6) {
+			line = 31970;
+		} else if (house > 6) {
+			line = 31970;
+		}
+
+		if (income <= (line)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+</script>
+Q(1): Does the individual receive public assistance? (public assistance does not include disability payments, pension, unemployment, or social security)
+A:	Yes
+	Q(1.1):GOTO:3
+A:	No
+	Q(1.2):GOTO:house
+Q(house): How many people are in your family/household? 
+X:number
+	Q(income): How much income does your household bring in per year in after tax dollars?
+	X[javascript:if (fedpov(getvar('house'),getvar('income'),100)){ goto('3') } else { goto('ineligible') } ]:number
+Q(3): Is the individual able to provide cash contributions towards payment of counsel without imposing a substantial hardship?
+A:	Yes
+	Q(3.1):GOTO:eligibleone
+A:	No
+	Q(3.2):GOTO:eligibletwo
+Q(ineligible): The individual is ineligible for counsel
+Q(eligibleone): The individual is eligible for counsel is required to make contributions towards the cost of counsel that will not cause them a substantial hardship. (if at any time during or after the case the individual becomes financially capable of paying for more or all of the costs, then they are required to make such payments) 
+Q(eligibletwo): The individual is eligible for counsel and is not required to repay any of the costs for counsel. (if at any point during or after the case the individual becomes financially capable of paying part or all of the costs for counsel, then they are required to make such payments)
+ 
